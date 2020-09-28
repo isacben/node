@@ -1,0 +1,50 @@
+body {
+    font-family: 'Spartan', sans-serif;
+}
+
+.center {
+    max-width: 1180px;
+    margin: 0 auto;
+    
+}
+
+.cards-center {
+    max-width: 1000px;
+    margin: 0 auto;
+    
+}
+
+.contact-box {
+    max-width: 100%
+}
+
+.c-form {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.c-underline {
+    text-decoration: underline;
+}
+
+.c-bg-gray {
+    background-color: #f6f6f6;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.my_footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
