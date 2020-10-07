@@ -2,6 +2,7 @@ const { static } = require('express');
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
+const pageRoutes = require('./routes/pageRoutes');
 const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
@@ -32,3 +33,4 @@ app.get('/dashboard', requireAuth, (req, res) => {
 });
 
 app.use(authRoutes);
+app.use(pageRoutes);
