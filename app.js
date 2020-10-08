@@ -5,6 +5,7 @@ const authRoutes = require('./routes/authRoutes');
 const pageRoutes = require('./routes/pageRoutes');
 const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
+const { getPageInfo } = require('./middleware/pageMiddleware');
 
 // express app
 const app = express();
@@ -28,7 +29,7 @@ app.get('*', checkUser);
 app.get('/', (req, res) => {
     res.render('index');
 })
-app.get('/dashboard', requireAuth, (req, res) => {
+app.get('/dashboard', requireAuth, getPageInfo, (req, res) => {
     res.render('admin/index');
 });
 

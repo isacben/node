@@ -10,7 +10,7 @@
         <div class="card-body">
             <div class="form-group">
                 <label for="pageName">Page name</label>
-                <input name="pageName" type="text" class="form-control form-control">
+                <input name="pageName" type="text" class="form-control form-control" value="<%= page.pageName %>">
                 <small id="pageNameHelp" class="form-text text-muted">The name of your website. For example, example.com or Example.</small>
             </div>
         </div>
@@ -25,19 +25,19 @@
         <div class="card-body">
             <div class="form-group">
                 <label for="topHeadline">Main headline</label>
-                <input name="topHeadline" type="text" class="form-control form-control">
+                <input name="topHeadline" type="text" class="form-control form-control" value="<%= page.topHeadline %>">
                 <small id="topHeadlineHelp" class="form-text text-muted">A catchy headline for your landing page.</small>
             </div>
 
             <div class="form-group">
                 <label for="secondaryHeadline">Secondary headline</label>
-                <input name="secondaryHeadline" type="text" class="form-control form-control">
+                <input name="secondaryHeadline" type="text" class="form-control form-control" value="<%= page.secondaryHeadline %>">
                 <small id="secondaryHeadlineHelp" class="form-text text-muted">A subtitle with important information.</small>
             </div>
 
             <div class="form-group">
                 <label for="mainDescription">Main description</label>
-                <textarea name="mainDescription" class="form-control form-control"></textarea>
+                <textarea name="mainDescription" class="form-control form-control"><%= page.mainDescription %></textarea>
                 <small id="mainDescriptionHelp" class="form-text text-muted">The main information in your landing page.</small>
             </div>
         </div>
@@ -282,7 +282,7 @@
         const mainDescription = form.mainDescription.value;
 
         try {
-            const res = await fetch('/create', {
+            const res = await fetch('/update', {
                 method: 'POST',
                 body: JSON.stringify({ 
                     userId: userId,

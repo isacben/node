@@ -1,5 +1,6 @@
 const { JsonWebTokenError } = require('jsonwebtoken');
 const User = require('../models/User');
+const Page = require('../models/Page');
 const jwt = require('jsonwebtoken');
 
 // handle errors
@@ -50,6 +51,8 @@ module.exports.signup_post = async (req, res) => {
     
     try {
         const user = await User.create( { email, password });
+        const page = await Page.create( { userId : user._id });
+
         const token = createToken(user._id);
         res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
         res.status(201).json({ user: user._id });
