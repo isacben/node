@@ -24,4 +24,29 @@ const getPageInfo = (req, res, next) => {
         next();
     }
 }
-module.exports = { getPageInfo };
+
+const getPage = async (req, res, next) => {
+    const pageUrl = req.params.pageUrl;
+    try {
+        const page = await Page.findOne( { pageUrl } );
+        res.locals.page = page;
+        next();
+    }
+    catch (err) {
+        res.status(400).send('404 page not found');
+    }
+}
+
+const getCorpPage = async (req, res, next) => {
+    const _id = '5f820bdb2f28eda212aa1d2d';
+    try {
+        const page = await Page.findById( _id );
+        res.locals.page = page;
+        next();
+    }
+    catch (err) {
+        res.status(400).send('404 page not found');
+    }
+}
+
+module.exports = { getPageInfo, getPage, getCorpPage };

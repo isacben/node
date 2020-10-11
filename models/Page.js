@@ -5,6 +5,10 @@ const pageSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User',
     },
+    pageUrl: {
+        type: String,
+        maxlength: [20, 'Maximum lenght is 20 characters'],
+    },
     pageName: {
         type: String,
         maxlength: [60, 'Maximum lenght is 60 characters'],

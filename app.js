@@ -5,7 +5,7 @@ const authRoutes = require('./routes/authRoutes');
 const pageRoutes = require('./routes/pageRoutes');
 const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
-const { getPageInfo } = require('./middleware/pageMiddleware');
+const { getPageInfo, getPage, getCorpPage } = require('./middleware/pageMiddleware');
 
 // express app
 const app = express();
@@ -26,9 +26,13 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, useCre
 
 // routes
 app.get('*', checkUser);
-app.get('/', (req, res) => {
+app.get('/', getCorpPage, (req, res) => {
     res.render('index');
 })
+app.get('/p/:pageUrl', getPage, (req, res) => {
+    res.render('index');
+});
+
 app.get('/dashboard', requireAuth, getPageInfo, (req, res) => {
     res.render('admin/index');
 });

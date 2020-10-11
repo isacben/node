@@ -1,6 +1,22 @@
+<a href="/p/<%= page.pageUrl %>">See your page</a>
+
 <form>
     
     <input type="hidden" name="userId" value="<%= user._id%>">
+
+    <!-- Website url -->
+    <div class="card mb-3">
+        <div class="card-header bg-secondary text-white">
+            Page Link
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="pageUrl">Linl for your page</label>
+                <input name="pageUrl" type="text" class="form-control form-control" value="<%= page.pageUrl %>">
+                <small id="pageUrlHelp" class="form-text text-muted">URL for your page. For example, example.</small>
+            </div>
+        </div>
+    </div>
 
     <!-- Website name -->
     <div class="card mb-3">
@@ -276,6 +292,7 @@
 
         // get the values
         const userId = form.userId.value;
+        const pageUrl = form.pageUrl.value;
         const pageName = form.pageName.value;
         const topHeadline = form.topHeadline.value;
         const secondaryHeadline = form.secondaryHeadline.value;
@@ -286,6 +303,7 @@
                 method: 'POST',
                 body: JSON.stringify({ 
                     userId: userId,
+                    pageUrl: pageUrl,
                     pageName: pageName, 
                     topHeadline: topHeadline, 
                     secondaryHeadline: secondaryHeadline, 

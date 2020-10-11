@@ -14,10 +14,11 @@ module.exports.create_post = async (req, res) => {
 }
 
 module.exports.update_post = async (req, res) => {
-    const { userId, pageName, topHeadline, secondaryHeadline, mainDescription } = req.body;
+    const { userId, pageUrl, pageName, topHeadline, secondaryHeadline, mainDescription } = req.body;
 
     try {
         const page = await Page.findOneAndUpdate( { userId: userId }, { 
+            pageUrl,
             pageName, 
             topHeadline, 
             secondaryHeadline, 
@@ -30,7 +31,18 @@ module.exports.update_post = async (req, res) => {
         res.status(400).json( {errors });
     }
 }
-
+/* 
 module.exports.page_get = async (req, res) => {
+    const _id = req.params.id;
 
-}
+    try {
+        const page = await Page.findById( _id );
+        // res.status(200).json({ page: page._id });
+        res.render('index');
+    }
+    catch (err) {
+        console.log('Page not found...');
+        // const errors = handleErrors(err);
+        res.sendStatus(400);
+    }
+} */
