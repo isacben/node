@@ -7,6 +7,8 @@ const pageSchema = new mongoose.Schema({
     },
     pageUrl: {
         type: String,
+        unique: true,
+        lowercase: true,
         maxlength: [20, 'Maximum lenght is 20 characters'],
     },
     pageName: {
