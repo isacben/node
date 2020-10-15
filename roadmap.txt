@@ -1,8 +1,7 @@
 [ ] hide top menu when you are in a landing page, exept in the abberto page
 [x] complete the content form
 [ ] be able to modify contact form
-[ ] add html format for the description textarea
-[ ] let users add links in the footer
+[x] add html format for the description textarea
 [ ] handle content form errors
 [ ] sticky Save button
 [ ] add preview mechanism
@@ -12,7 +11,7 @@
 	[ ] add a Publish button in the form with a Stripe subscription form
 	[ ] add a validation to the production page to see if it is published
 [x] complete the render of the landing pages
-[ ] be able to select color for the buttons
+[x] be able to select color for the buttons
 [ ] be able to upload pictures
 [ ] user management
 	[ ] see how to use google to authenticate
@@ -20,3 +19,7 @@
 	[ ] be able to reset password
 	[ ] confirm email mechanism
 [ ] add env mechanism
+
+- postponed -
+
+[ ] let users add links in the footer

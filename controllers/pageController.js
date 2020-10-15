@@ -17,6 +17,7 @@ module.exports.update_post = async (req, res) => {
     const {
         userId,
         pageUrl,
+        buttonColor,
         pageName, 
         topHeadline,
         secondaryHeadline,
@@ -54,10 +55,13 @@ module.exports.update_post = async (req, res) => {
         footerText,    
     } = req.body;
 
+    console.log(req.body);
+
     try {
         const page = await Page.findOneAndUpdate( { userId: userId }, { 
             userId,
             pageUrl,
+            buttonColor,
             pageName, 
             topHeadline,
             secondaryHeadline,

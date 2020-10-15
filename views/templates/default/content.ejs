@@ -5,7 +5,7 @@
                     <h3 class="mb-4"><%= page.secondaryHeadline %></h3>
 
                     <div>
-                        <%= page.mainDescription %>
+                        <%- page.mainDescription %>
                     </div>
                 </div>
 
@@ -23,7 +23,7 @@
                                 <div class="form-group">
                                     <input name="user_email" type="email" class="form-control form-control" placeholder="Your email" required>
                                 </div> 
-                                <button class="btn btn-primary btn-block text-uppercase py-3"><%= page.contactFormButton %></button>
+                                <button class="btn <%= page.buttonColor %> btn-block text-uppercase py-3"><%= page.contactFormButton %></button>
                             </form>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
                                 <div class="form-group">
                                     <input name="user_email" type="email" class="form-control form-control" placeholder="Your email" required>
                                 </div>
-                                <button class="btn btn-danger btn-block text-uppercase py-3"><%= page.contactFormButton %></button>
+                                <button class="btn <%= page.buttonColor %> btn-block text-uppercase py-3"><%= page.contactFormButton %></button>
                             </form>
                         </div>
                     </div>

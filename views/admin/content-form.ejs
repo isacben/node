@@ -1,5 +1,8 @@
 <a href="/p/<%= page.pageUrl %>">See your page</a>
 
+
+
+
 <form>
     
     <input type="hidden" name="userId" value="<%= user._id%>">
@@ -15,6 +18,35 @@
                 <input name="pageUrl" type="text" class="form-control form-control" value="<%= page.pageUrl %>">
                 <small id="pageUrlHelp" class="form-text text-muted">URL for your page. For example, example.</small>
             </div>
+        </div>
+    </div>
+
+    <!-- Buttons color -->
+    <div class="card mb-3">
+        <div class="card-header bg-secondary text-white">
+            Buttons Color
+        </div>
+        <div class="card-body">
+            <select name="buttonColor" class="selectpicker">
+                <% const dropdownVals = {
+                    'btn-primary': 'Blue',
+                    'btn-secondary': 'Gray',
+                    'btn-success': 'Green',
+                    'btn-danger': 'Red',
+                    'btn-warning': 'Yellow',
+                    'btn-info': 'Light Blue',
+                    'btn-dark': 'Dark',
+                 } %>
+                <% Object.entries(dropdownVals).forEach(function([key, value]) { %>
+                    <option value="<%= key %>"
+                        <% if (page.buttonColor === key) { %>
+                            selected
+                        <% } %>
+                    >
+                        <%= value %>
+                    </option>
+                <% }) %>
+            </select>
         </div>
     </div>
 
@@ -53,7 +85,7 @@
 
             <div class="form-group">
                 <label for="mainDescription">Main description</label>
-                <textarea name="mainDescription" class="form-control form-control"><%= page.mainDescription %></textarea>
+                <textarea  id="textareaDescription" name="mainDescription" class="form-control form-control"><%= page.mainDescription %></textarea>
                 <small id="mainDescriptionHelp" class="form-text text-muted">The main information in your landing page.</small>
             </div>
         </div>
@@ -286,6 +318,8 @@
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        tinyMCE.triggerSave(true,true);
+
         // reset errors
         // emailError.textContent= '';
         // passwordError.textContent = '';
@@ -293,6 +327,7 @@
         // get the values
         const userId = form.userId.value;
         const pageUrl = form.pageUrl.value;
+        const buttonColor = form.buttonColor.value;
         const pageName = form.pageName.value;
         const topHeadline = form.topHeadline.value;
         const secondaryHeadline = form.secondaryHeadline.value;
@@ -340,6 +375,7 @@
                 body: JSON.stringify({ 
                     userId,
                     pageUrl,
+                    buttonColor,
                     pageName, 
                     topHeadline,
                     secondaryHeadline,
@@ -390,5 +426,17 @@
         } catch (err) {
             console.log(err);
         }
+    });
+</script>
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+<script>
+    tinymce.init({
+    selector: '#textareaDescription',
+    menubar:false,
+    statusbar: false,
+    plugins: 'lists advlist',
+    toolbar: 'bold italic | bullist'
     });
 </script>

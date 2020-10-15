@@ -11,6 +11,9 @@ const pageSchema = new mongoose.Schema({
         lowercase: true,
         maxlength: [20, 'Maximum lenght is 20 characters'],
     },
+    buttonColor: {
+        type: String,
+    },
     pageName: {
         type: String,
         maxlength: [60, 'Maximum lenght is 60 characters'],

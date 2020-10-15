@@ -2,7 +2,11 @@
             <div class="row center">
                 <div class="col text-center my-auto">
                     <p>
-                        <%= page.footerText %>
+                        <% if (typeof page !== 'undefined') { %>
+                            <%= page.footerText %>
+                        <% } else { %>
+                            &copy;2020 abberto.com
+                        <% } %>
                     </p>
                 </div>
             </div>
