@@ -3,7 +3,7 @@
 [ ] be able to modify contact form
 [x] add html format for the description textarea
 [ ] handle content form errors
-[ ] sticky Save button
+[x] sticky Save button
 [ ] add preview mechanism
 	[ ] style the preview page link
 	[ ] add a preview route and protected with the checkUser middleware
@@ -19,6 +19,7 @@
 	[ ] be able to reset password
 	[ ] confirm email mechanism
 [ ] add env mechanism
+[ ] fix pageName: support long strings in mobile
 
 - postponed -
 

@@ -1,314 +1,330 @@
-<a href="/p/<%= page.pageUrl %>">See your page</a>
-
-
-
-
-<form>
-    
-    <input type="hidden" name="userId" value="<%= user._id%>">
-
-    <!-- Website url -->
-    <div class="card mb-3">
-        <div class="card-header bg-secondary text-white">
-            Page Link
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                <label for="pageUrl">Linl for your page</label>
-                <input name="pageUrl" type="text" class="form-control form-control" value="<%= page.pageUrl %>">
-                <small id="pageUrlHelp" class="form-text text-muted">URL for your page. For example, example.</small>
-            </div>
-        </div>
+<div class="row center my-3">
+    <div class="col">
+        <a href="/p/<%= page.pageUrl %>">See your page</a>
     </div>
+</div>
 
-    <!-- Buttons color -->
-    <div class="card mb-3">
-        <div class="card-header bg-secondary text-white">
-            Buttons Color
-        </div>
-        <div class="card-body">
-            <select name="buttonColor" class="selectpicker">
-                <% const dropdownVals = {
-                    'btn-primary': 'Blue',
-                    'btn-secondary': 'Gray',
-                    'btn-success': 'Green',
-                    'btn-danger': 'Red',
-                    'btn-warning': 'Yellow',
-                    'btn-info': 'Light Blue',
-                    'btn-dark': 'Dark',
-                 } %>
-                <% Object.entries(dropdownVals).forEach(function([key, value]) { %>
-                    <option value="<%= key %>"
-                        <% if (page.buttonColor === key) { %>
-                            selected
-                        <% } %>
-                    >
-                        <%= value %>
-                    </option>
-                <% }) %>
-            </select>
-        </div>
-    </div>
+<div class="row center my-3">
+    <div class="col-sm-8">
+        <form>
+            <input type="hidden" name="userId" value="<%= user._id%>">
 
-    <!-- Website name -->
-    <div class="card mb-3">
-        <div class="card-header bg-secondary text-white">
-            Header
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                <label for="pageName">Page name</label>
-                <input name="pageName" type="text" class="form-control form-control" value="<%= page.pageName %>">
-                <small id="pageNameHelp" class="form-text text-muted">The name of your website. For example, example.com or Example.</small>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Top section -  -->
-    <div class="card mb-3">
-        <div class="card-header bg-secondary text-white">
-            Cover
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                <label for="topHeadline">Main headline</label>
-                <input name="topHeadline" type="text" class="form-control form-control" value="<%= page.topHeadline %>">
-                <small id="topHeadlineHelp" class="form-text text-muted">A catchy headline for your landing page.</small>
-            </div>
-
-            <div class="form-group">
-                <label for="secondaryHeadline">Secondary headline</label>
-                <input name="secondaryHeadline" type="text" class="form-control form-control" value="<%= page.secondaryHeadline %>">
-                <small id="secondaryHeadlineHelp" class="form-text text-muted">A subtitle with important information.</small>
-            </div>
-
-            <div class="form-group">
-                <label for="mainDescription">Main description</label>
-                <textarea  id="textareaDescription" name="mainDescription" class="form-control form-control"><%= page.mainDescription %></textarea>
-                <small id="mainDescriptionHelp" class="form-text text-muted">The main information in your landing page.</small>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact form -->
-    <div class="card mb-3">
-        <div class="card-header bg-secondary text-white">
-            Contact form
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                <label for="contactFormTitle">Title</label>
-                <input name="contactFormTitle" type="text" class="form-control form-control" value="<%= page.contactFormTitle %>">
-                <small id="contactFormTitleHelp" class="form-text text-muted">The title for the contact form.</small>
-            </div>
-            <div class="form-group">
-                <label for="contactFormSubtitle">Subtitle</label>
-                <input name="contactFormSubtitle" type="text" class="form-control form-control" value="<%= page.contactFormSubtitle %>">
-                <small id="contactFormSubtitleHelp" class="form-text text-muted">The subtitle for the contact form.</small>
-            </div>
-            <div class="form-group">
-                <label for="contactFormButton">Button title</label>
-                <input name="contactFormButton" type="text" class="form-control form-control" value="<%= page.contactFormButton %>">
-                <small id="contactFormButtonHelp" class="form-text text-muted">The text for the contact form button. For example, Contact us.</small>
-            </div>
-            <div class="form-group">
-                <!-- Name field checkbox -->
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="contactFormIncludeName">
-                    <label class="form-check-label" for="contactFormIncludeName">Name field</label>
+            <!-- Website url -->
+            <div class="card mb-3">
+                <div class="card-header bg-secondary text-white">
+                    Page Link
                 </div>
-                <!-- Email field checkbox -->
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="contactFormIncludeEmail">
-                    <label class="form-check-label" for="contactFormIncludeEmail">Email field</label>
-                </div>
-                <!-- Telephone filed checkbox -->
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="contactFormIncludeTel">
-                    <label class="form-check-label" for="contactFormIncludeTel">Telephone field</label>
-                </div>
-                <!-- Comment field checkbox -->
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="contactFormIncludeComment">
-                    <label class="form-check-label" for="contactFormIncludeComment">Comment field</label>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="pageUrl">Linl for your page</label>
+                        <input name="pageUrl" type="text" class="form-control form-control" value="<%= page.pageUrl %>">
+                        <small id="pageUrlHelp" class="form-text text-muted">URL for your page. For example, example.</small>
+                    </div>
                 </div>
             </div>
+
+            <!-- Buttons color -->
+            <div class="card mb-3">
+                <div class="card-header bg-secondary text-white">
+                    Buttons Color
+                </div>
+                <div class="card-body">
+                    <select name="buttonColor" class="selectpicker">
+                        <% const dropdownVals = {
+                            'btn-primary': 'Blue',
+                            'btn-secondary': 'Gray',
+                            'btn-success': 'Green',
+                            'btn-danger': 'Red',
+                            'btn-warning': 'Yellow',
+                            'btn-info': 'Light Blue',
+                            'btn-dark': 'Dark',
+                        } %>
+                        <% Object.entries(dropdownVals).forEach(function([key, value]) { %>
+                            <option value="<%= key %>"
+                                <% if (page.buttonColor === key) { %>
+                                    selected
+                                <% } %>
+                            >
+                                <%= value %>
+                            </option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Website name -->
+            <div class="card mb-3">
+                <div class="card-header bg-secondary text-white">
+                    Header
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="pageName">Page name</label>
+                        <input name="pageName" type="text" class="form-control form-control" value="<%= page.pageName %>">
+                        <small id="pageNameHelp" class="form-text text-muted">The name of your website. For example, example.com or Example.</small>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Top section -  -->
+            <div class="card mb-3">
+                <div class="card-header bg-secondary text-white">
+                    Cover
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="topHeadline">Main headline</label>
+                        <input name="topHeadline" type="text" class="form-control form-control" value="<%= page.topHeadline %>">
+                        <small id="topHeadlineHelp" class="form-text text-muted">A catchy headline for your landing page.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="secondaryHeadline">Secondary headline</label>
+                        <input name="secondaryHeadline" type="text" class="form-control form-control" value="<%= page.secondaryHeadline %>">
+                        <small id="secondaryHeadlineHelp" class="form-text text-muted">A subtitle with important information.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mainDescription">Main description</label>
+                        <textarea  id="textareaDescription" name="mainDescription" class="form-control form-control"><%= page.mainDescription %></textarea>
+                        <small id="mainDescriptionHelp" class="form-text text-muted">The main information in your landing page.</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact form -->
+            <div class="card mb-3">
+                <div class="card-header bg-secondary text-white">
+                    Contact form
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="contactFormTitle">Title</label>
+                        <input name="contactFormTitle" type="text" class="form-control form-control" value="<%= page.contactFormTitle %>">
+                        <small id="contactFormTitleHelp" class="form-text text-muted">The title for the contact form.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactFormSubtitle">Subtitle</label>
+                        <input name="contactFormSubtitle" type="text" class="form-control form-control" value="<%= page.contactFormSubtitle %>">
+                        <small id="contactFormSubtitleHelp" class="form-text text-muted">The subtitle for the contact form.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactFormButton">Button title</label>
+                        <input name="contactFormButton" type="text" class="form-control form-control" value="<%= page.contactFormButton %>">
+                        <small id="contactFormButtonHelp" class="form-text text-muted">The text for the contact form button. For example, Contact us.</small>
+                    </div>
+                    <div class="form-group">
+                        <!-- Name field checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="contactFormIncludeName">
+                            <label class="form-check-label" for="contactFormIncludeName">Name field</label>
+                        </div>
+                        <!-- Email field checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="contactFormIncludeEmail">
+                            <label class="form-check-label" for="contactFormIncludeEmail">Email field</label>
+                        </div>
+                        <!-- Telephone filed checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="contactFormIncludeTel">
+                            <label class="form-check-label" for="contactFormIncludeTel">Telephone field</label>
+                        </div>
+                        <!-- Comment field checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="contactFormIncludeComment">
+                            <label class="form-check-label" for="contactFormIncludeComment">Comment field</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features section -->
+            <div class="card mb-3">
+                <div class="card-header bg-secondary text-white">
+                    Features
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="featuresHeadline">Features section headline</label>
+                        <input name="featuresHeadline" type="text" class="form-control form-control" value="<%= page.featuresHeadline %>">
+                        <small id="featuresHeadlineHelp" class="form-text text-muted">A headline for the features section.</small>
+                    </div>
+
+                    <!-- Feature 1 -->
+                    <div class="form-group">
+                        <label for="firstFeatureTitle">Feature 1 title</label>
+                        <input name="firstFeatureTitle" type="text" class="form-control form-control" value="<%= page.firstFeatureTitle %>">
+                        <small id="firstFeatureTitleHelp" class="form-text text-muted">Title for the first feature.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstFeatureDescription">Feature 1 description</label>
+                        <textarea name="firstFeatureDescription" class="form-control form-control"><%= page.firstFeatureDescription %></textarea>
+                        <small id="firstFeatureDescriptionHelp" class="form-text text-muted">Information about the first feature.</small>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="form-group">
+                        <label for="secondFeatureTitle">Feature 2 title</label>
+                        <input name="secondFeatureTitle" type="text" class="form-control form-control" value="<%= page.secondFeatureTitle %>">
+                        <small id="secondFeatureTitleHelp" class="form-text text-muted">Title for the second feature.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="secondFeatureDescription">Feature 2 description</label>
+                        <textarea name="secondFeatureDescription" class="form-control form-control"><%= page.secondFeatureDescription %></textarea>
+                        <small id="secondFeatureDescriptionHelp" class="form-text text-muted">Information about the second feature.</small>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="form-group">
+                        <label for="thirdFeatureTitle">Feature 3 title</label>
+                        <input name="thirdFeatureTitle" type="text" class="form-control form-control" value="<%= page.thirdFeatureTitle %>">
+                        <small id="thirdFeatureTitleHelp" class="form-text text-muted">Title for the third feature.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="thirdFeatureDescription">Feature 3 description</label>
+                        <textarea name="thirdFeatureDescription" class="form-control form-control"><%= page.thirdFeatureDescription %></textarea>
+                        <small id="thirdFeatureDescriptionHelp" class="form-text text-muted">Information about the third feature.</small>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="form-group">
+                        <label for="forthFeatureTitle">Feature 4 title</label>
+                        <input name="forthFeatureTitle" type="text" class="form-control form-control" value="<%= page.forthFeatureTitle %>">
+                        <small id="forthFeatureTitleHelp" class="form-text text-muted">Title for the forth feature.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="forthFeatureDescription">Feature 4 description</label>
+                        <textarea name="forthFeatureDescription" class="form-control form-control"><%= page.forthFeatureDescription %></textarea>
+                        <small id="forthFeatureDescriptionHelp" class="form-text text-muted">Information about the forth feature.</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columns section -->
+            <div class="card mb-3">
+                <div class="card-header bg-secondary text-white">
+                    Columns
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="columsHeadline">Columns section headline</label>
+                        <input name="columsHeadline" type="text" class="form-control form-control" value="<%= page.columsHeadline %>">
+                        <small id="columsHeadlineHelp" class="form-text text-muted">A headline for the colums section.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="columnsSubtitle">Columns section subtitle</label>
+                        <input name="columnsSubtitle" type="text" class="form-control form-control" value="<%= page.columnsSubtitle %>">
+                        <small id="columnsSubtitleHelp" class="form-text text-muted">Subtitle for the columns section.</small>
+                    </div>
+
+                    <!-- Column 1 -->
+                    <div class="form-group">
+                        <label for="firstColumnTitle">Column 1 title</label>
+                        <input name="firstColumnTitle" type="text" class="form-control form-control" value="<%= page.firstColumnTitle %>">
+                        <small id="firstColumnTitleHelp" class="form-text text-muted">Title for the first column.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstColumnSubtitle">Column 1 subtitle</label>
+                        <input name="firstColumnSubtitle" type="text" class="form-control form-control" value="<%= page.firstColumnSubtitle %>">
+                        <small id="firstColumnSubtitleHelp" class="form-text text-muted">Subtitle for the first column.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstColumnDescription">Column 1 description</label>
+                        <textarea name="firstColumnDescription" class="form-control form-control"><%= page.firstColumnDescription %></textarea>
+                        <small id="firstColumnDescriptionHelp" class="form-text text-muted">Information about the first column.</small>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="form-group">
+                        <label for="secondColumnTitle">Column 2 title</label>
+                        <input name="secondColumnTitle" type="text" class="form-control form-control" value="<%= page.secondColumnTitle %>">
+                        <small id="secondColumnTitleHelp" class="form-text text-muted">Title for the second column.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="secondColumnSubtitle">Column 2 subtitle</label>
+                        <input name="secondColumnSubtitle" type="text" class="form-control form-control" value="<%= page.secondColumnSubtitle %>">
+                        <small id="secondColumnSubtitleHelp" class="form-text text-muted">Subtitle for the second column.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="secondColumnDescription">Column 2 description</label>
+                        <textarea name="secondColumnDescription" class="form-control form-control"><%= page.secondColumnDescription %></textarea>
+                        <small id="secondColumnDescriptionHelp" class="form-text text-muted">Information about the second column.</small>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="form-group">
+                        <label for="thirdColumnTitle">Column 3 title</label>
+                        <input name="thirdColumnTitle" type="text" class="form-control form-control" value="<%= page.thirdColumnTitle %>">
+                        <small id="thirdColumnTitleHelp" class="form-text text-muted">Title for the third column.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="thirdColumnSubtitle">Column 3 subtitle</label>
+                        <input name="thirdColumnSubtitle" type="text" class="form-control form-control" value="<%= page.thirdColumnSubtitle %>">
+                        <small id="thirdColumnSubtitleHelp" class="form-text text-muted">Subtitle for the third column.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="thirdColumnDescription">Column 3 description</label>
+                        <textarea name="thirdColumnDescription" class="form-control form-control"><%= page.thirdColumnDescription %></textarea>
+                        <small id="thirdColumnDescriptionHelp" class="form-text text-muted">Information about the third column.</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- References -->
+            <div class="card mb-3">
+                <div class="card-header bg-secondary text-white">
+                    References
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="referenceLine1">First line of the comment</label>
+                        <input name="referenceLine1" type="text" class="form-control form-control" value="<%= page.referenceLine1 %>">
+                        <small id="referenceLine1Help" class="form-text text-muted">The first line of your reference's comment.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="referenceLine2">Second line of the comment</label>
+                        <input name="referenceLine2" type="text" class="form-control form-control" value="<%= page.referenceLine2 %>">
+                        <small id="referenceLine2Help" class="form-text text-muted">The second line of your reference's comment.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="referenceName">Name and title</label>
+                        <input name="referenceName" type="text" class="form-control form-control" value="<%= page.referenceName %>">
+                        <small id="referenceNameHelp" class="form-text text-muted">Name and title of your reference. For example, Isaac Benitez, lando founder.</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer section -->
+            <div class="card mb-3">
+                <div class="card-header bg-secondary text-white">
+                    Footer
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="footerText">Text for the footer</label>
+                        <input name="footerText" type="text" class="form-control form-control" value="<%= page.footerText %>">
+                        <small id="footerTextHelp" class="form-text text-muted">Text for the footer. For example, &copy;2020 lando.com. All rigths reserved.</small>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- Features section -->
-    <div class="card mb-3">
-        <div class="card-header bg-secondary text-white">
-            Features
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                <label for="featuresHeadline">Features section headline</label>
-                <input name="featuresHeadline" type="text" class="form-control form-control" value="<%= page.featuresHeadline %>">
-                <small id="featuresHeadlineHelp" class="form-text text-muted">A headline for the features section.</small>
-            </div>
-
-            <!-- Feature 1 -->
-            <div class="form-group">
-                <label for="firstFeatureTitle">Feature 1 title</label>
-                <input name="firstFeatureTitle" type="text" class="form-control form-control" value="<%= page.firstFeatureTitle %>">
-                <small id="firstFeatureTitleHelp" class="form-text text-muted">Title for the first feature.</small>
-            </div>
-            <div class="form-group">
-                <label for="firstFeatureDescription">Feature 1 description</label>
-                <textarea name="firstFeatureDescription" class="form-control form-control"><%= page.firstFeatureDescription %></textarea>
-                <small id="firstFeatureDescriptionHelp" class="form-text text-muted">Information about the first feature.</small>
-            </div>
-
-            <!-- Feature 2 -->
-            <div class="form-group">
-                <label for="secondFeatureTitle">Feature 2 title</label>
-                <input name="secondFeatureTitle" type="text" class="form-control form-control" value="<%= page.secondFeatureTitle %>">
-                <small id="secondFeatureTitleHelp" class="form-text text-muted">Title for the second feature.</small>
-            </div>
-            <div class="form-group">
-                <label for="secondFeatureDescription">Feature 2 description</label>
-                <textarea name="secondFeatureDescription" class="form-control form-control"><%= page.secondFeatureDescription %></textarea>
-                <small id="secondFeatureDescriptionHelp" class="form-text text-muted">Information about the second feature.</small>
-            </div>
-
-            <!-- Feature 3 -->
-            <div class="form-group">
-                <label for="thirdFeatureTitle">Feature 3 title</label>
-                <input name="thirdFeatureTitle" type="text" class="form-control form-control" value="<%= page.thirdFeatureTitle %>">
-                <small id="thirdFeatureTitleHelp" class="form-text text-muted">Title for the third feature.</small>
-            </div>
-            <div class="form-group">
-                <label for="thirdFeatureDescription">Feature 3 description</label>
-                <textarea name="thirdFeatureDescription" class="form-control form-control"><%= page.thirdFeatureDescription %></textarea>
-                <small id="thirdFeatureDescriptionHelp" class="form-text text-muted">Information about the third feature.</small>
-            </div>
-
-            <!-- Feature 4 -->
-            <div class="form-group">
-                <label for="forthFeatureTitle">Feature 4 title</label>
-                <input name="forthFeatureTitle" type="text" class="form-control form-control" value="<%= page.forthFeatureTitle %>">
-                <small id="forthFeatureTitleHelp" class="form-text text-muted">Title for the forth feature.</small>
-            </div>
-            <div class="form-group">
-                <label for="forthFeatureDescription">Feature 4 description</label>
-                <textarea name="forthFeatureDescription" class="form-control form-control"><%= page.forthFeatureDescription %></textarea>
-                <small id="forthFeatureDescriptionHelp" class="form-text text-muted">Information about the forth feature.</small>
+        <div class="col-md">
+            <div class="sticky-top">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <p class="card-text">Save your work:</p>
+                            <button class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Columns section -->
-    <div class="card mb-3">
-        <div class="card-header bg-secondary text-white">
-            Columns
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                <label for="columsHeadline">Columns section headline</label>
-                <input name="columsHeadline" type="text" class="form-control form-control" value="<%= page.columsHeadline %>">
-                <small id="columsHeadlineHelp" class="form-text text-muted">A headline for the colums section.</small>
-            </div>
-            <div class="form-group">
-                <label for="columnsSubtitle">Columns section subtitle</label>
-                <input name="columnsSubtitle" type="text" class="form-control form-control" value="<%= page.columnsSubtitle %>">
-                <small id="columnsSubtitleHelp" class="form-text text-muted">Subtitle for the columns section.</small>
-            </div>
-
-            <!-- Column 1 -->
-            <div class="form-group">
-                <label for="firstColumnTitle">Column 1 title</label>
-                <input name="firstColumnTitle" type="text" class="form-control form-control" value="<%= page.firstColumnTitle %>">
-                <small id="firstColumnTitleHelp" class="form-text text-muted">Title for the first column.</small>
-            </div>
-            <div class="form-group">
-                <label for="firstColumnSubtitle">Column 1 subtitle</label>
-                <input name="firstColumnSubtitle" type="text" class="form-control form-control" value="<%= page.firstColumnSubtitle %>">
-                <small id="firstColumnSubtitleHelp" class="form-text text-muted">Subtitle for the first column.</small>
-            </div>
-            <div class="form-group">
-                <label for="firstColumnDescription">Column 1 description</label>
-                <textarea name="firstColumnDescription" class="form-control form-control"><%= page.firstColumnDescription %></textarea>
-                <small id="firstColumnDescriptionHelp" class="form-text text-muted">Information about the first column.</small>
-            </div>
-
-            <!-- Column 2 -->
-            <div class="form-group">
-                <label for="secondColumnTitle">Column 2 title</label>
-                <input name="secondColumnTitle" type="text" class="form-control form-control" value="<%= page.secondColumnTitle %>">
-                <small id="secondColumnTitleHelp" class="form-text text-muted">Title for the second column.</small>
-            </div>
-            <div class="form-group">
-                <label for="secondColumnSubtitle">Column 2 subtitle</label>
-                <input name="secondColumnSubtitle" type="text" class="form-control form-control" value="<%= page.secondColumnSubtitle %>">
-                <small id="secondColumnSubtitleHelp" class="form-text text-muted">Subtitle for the second column.</small>
-            </div>
-            <div class="form-group">
-                <label for="secondColumnDescription">Column 2 description</label>
-                <textarea name="secondColumnDescription" class="form-control form-control"><%= page.secondColumnDescription %></textarea>
-                <small id="secondColumnDescriptionHelp" class="form-text text-muted">Information about the second column.</small>
-            </div>
-
-            <!-- Column 3 -->
-            <div class="form-group">
-                <label for="thirdColumnTitle">Column 3 title</label>
-                <input name="thirdColumnTitle" type="text" class="form-control form-control" value="<%= page.thirdColumnTitle %>">
-                <small id="thirdColumnTitleHelp" class="form-text text-muted">Title for the third column.</small>
-            </div>
-            <div class="form-group">
-                <label for="thirdColumnSubtitle">Column 3 subtitle</label>
-                <input name="thirdColumnSubtitle" type="text" class="form-control form-control" value="<%= page.thirdColumnSubtitle %>">
-                <small id="thirdColumnSubtitleHelp" class="form-text text-muted">Subtitle for the third column.</small>
-            </div>
-            <div class="form-group">
-                <label for="thirdColumnDescription">Column 3 description</label>
-                <textarea name="thirdColumnDescription" class="form-control form-control"><%= page.thirdColumnDescription %></textarea>
-                <small id="thirdColumnDescriptionHelp" class="form-text text-muted">Information about the third column.</small>
-            </div>
-        </div>
-    </div>
-
-    <!-- References -->
-    <div class="card mb-3">
-        <div class="card-header bg-secondary text-white">
-            References
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                <label for="referenceLine1">First line of the comment</label>
-                <input name="referenceLine1" type="text" class="form-control form-control" value="<%= page.referenceLine1 %>">
-                <small id="referenceLine1Help" class="form-text text-muted">The first line of your reference's comment.</small>
-            </div>
-            <div class="form-group">
-                <label for="referenceLine2">Second line of the comment</label>
-                <input name="referenceLine2" type="text" class="form-control form-control" value="<%= page.referenceLine2 %>">
-                <small id="referenceLine2Help" class="form-text text-muted">The second line of your reference's comment.</small>
-            </div>
-            <div class="form-group">
-                <label for="referenceName">Name and title</label>
-                <input name="referenceName" type="text" class="form-control form-control" value="<%= page.referenceName %>">
-                <small id="referenceNameHelp" class="form-text text-muted">Name and title of your reference. For example, Isaac Benitez, lando founder.</small>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer section -->
-    <div class="card mb-3">
-        <div class="card-header bg-secondary text-white">
-            Footer
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                <label for="footerText">Text for the footer</label>
-                <input name="footerText" type="text" class="form-control form-control" value="<%= page.footerText %>">
-                <small id="footerTextHelp" class="form-text text-muted">Text for the footer. For example, &copy;2020 lando.com. All rigths reserved.</small>
-            </div>
-        </div>
-    </div>
-
-    <button class="btn btn-primary">Save</button>
-</form>
+    </form>
+</div>
 
 <script>
     const form = document.querySelector('form');
