@@ -16,6 +16,7 @@ module.exports.create_post = async (req, res) => {
 module.exports.update_post = async (req, res) => {
     const {
         userId,
+        pageLogo,
         pageUrl,
         buttonColor,
         pageName, 
@@ -60,6 +61,7 @@ module.exports.update_post = async (req, res) => {
     try {
         const page = await Page.findOneAndUpdate( { userId: userId }, { 
             userId,
+            pageLogo,
             pageUrl,
             buttonColor,
             pageName, 

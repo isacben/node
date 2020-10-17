@@ -5,6 +5,9 @@ const pageSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User',
     },
+    pageLogo: {
+        type: String,
+    },
     pageUrl: {
         type: String,
         unique: true,

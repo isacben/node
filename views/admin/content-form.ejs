@@ -9,6 +9,24 @@
         <form>
             <input type="hidden" name="userId" value="<%= user._id%>">
 
+            <div class="card mb-3">
+                <div class="card-header bg-secondary text-white">
+                    Logo
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="pageLogo">Upload your logo</label>
+                        <input type="file" class="form-control-file" 
+                            id="pageLogoUpload" accept=".jpg, .jpeg, .png"
+                            onchange="processImg('pageLogo', 36, 36)">
+                        <input type="hidden" name="pageLogo" value="<%= page.pageLogo %>">
+                        <div>
+                            <img id="pageLogoPreview" src="<%= page.pageLogo %>" height="36">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Website url -->
             <div class="card mb-3">
                 <div class="card-header bg-secondary text-white">
@@ -342,6 +360,7 @@
 
         // get the values
         const userId = form.userId.value;
+        const pageLogo = form.pageLogo.value;
         const pageUrl = form.pageUrl.value;
         const buttonColor = form.buttonColor.value;
         const pageName = form.pageName.value;
@@ -390,6 +409,7 @@
                 method: 'POST',
                 body: JSON.stringify({ 
                     userId,
+                    pageLogo,
                     pageUrl,
                     buttonColor,
                     pageName, 
@@ -455,4 +475,56 @@
     plugins: 'lists advlist',
     toolbar: 'bold italic | bullist'
     });
+</script>
+
+<script>
+    function processImg(id, width, height) {
+        console.log("connected to ", id, width, height);
+
+        const file = document.querySelector(`#${id}Upload`).files[0];
+
+        if (!file) return;
+
+        const reader = new FileReader();
+        
+        reader.readAsDataURL(file);
+        
+        reader.onload = function(event) {
+            const imgElement = document.createElement("img");
+            imgElement.src = event.target.result;
+
+            //document.querySelector(`#${id}Preview`).src = event.target.result;
+
+            imgElement.onload = function(e) {
+                const canvas = document.createElement("canvas");
+
+                const originalImgWidht = e.target.width;
+                const originalImgHeight = e.target.height;
+                
+                const MAX_HEIGHT = 250;
+
+                const scaleSize = MAX_HEIGHT / e.target.height;
+
+                if (originalImgHeight > MAX_HEIGHT) {
+                    canvas.width = e.target.width * scaleSize;
+                    canvas.height = MAX_HEIGHT;
+                }
+                else {
+                    canvas.width = originalImgWidht;
+                    canvas.height = originalImgHeight;
+                }
+
+                const ctx = canvas.getContext("2d");
+
+                ctx.imageSmoothingQuality = "high";
+                ctx.drawImage(e.target, 0, 0, canvas.width, canvas.height);
+
+                const srcEncoded = ctx.canvas.toDataURL(e.target, "image/jpeg", 1);
+
+                document.querySelector(`#${id}Preview`).src = srcEncoded;
+
+                document.getElementsByName(id)[0].value = srcEncoded;
+            }
+        };
+    }
 </script>
