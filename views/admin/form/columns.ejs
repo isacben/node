@@ -17,6 +17,16 @@
 
         <!-- Column 1 -->
         <div class="form-group">
+            <div class="mb-2">
+                <img class="border bg-light" id="firstColumnImagePreview" src="<%= page.firstColumnImage %>" height="120">
+            </div>
+            <label for="firstColumnImage">Upload column 1 image</label>
+            <input type="file" class="form-control-file" 
+                id="firstColumnImageUpload" accept=".jpg, .jpeg, .png, .svg"
+                onchange="processImg('firstColumnImage', 64, 64)">
+            <input type="hidden" name="firstColumnImage" value="<%= page.firstColumnImage %>">
+        </div>
+        <div class="form-group">
             <label for="firstColumnTitle">Column 1 title</label>
             <input name="firstColumnTitle" type="text" class="form-control form-control" value="<%= page.firstColumnTitle %>">
             <small id="firstColumnTitleHelp" class="form-text text-muted">Title for the first column.</small>
@@ -34,6 +44,16 @@
 
         <!-- Column 2 -->
         <div class="form-group">
+            <div class="mb-2">
+                <img class="border bg-light" id="secondColumnImagePreview" src="<%= page.secondColumnImage %>" height="120">
+            </div>
+            <label for="secondColumnImage">Upload column 2seconde</label>
+            <input type="file" class="form-control-file" 
+                id="secondColumnImageUpload" accept=".jpg, .jpeg, .png, .svg"
+                onchange="processImg('secondColumnImage', 64, 64)">
+            <input type="hidden" name="secondColumnImage" value="<%= page.secondColumnImage %>">
+        </div>
+        <div class="form-group">
             <label for="secondColumnTitle">Column 2 title</label>
             <input name="secondColumnTitle" type="text" class="form-control form-control" value="<%= page.secondColumnTitle %>">
             <small id="secondColumnTitleHelp" class="form-text text-muted">Title for the second column.</small>
@@ -50,6 +70,16 @@
         </div>
 
         <!-- Column 3 -->
+        <div class="form-group">
+            <div class="mb-2">
+                <img class="border bg-light" id="thirdColumnImagePreview" src="<%= page.thirdColumnImage %>" height="120">
+            </div>
+            <label for="thirdColumnImage">Upload column 3 image</label>
+            <input type="file" class="form-control-file" 
+                id="thirdColumnImageUpload" accept=".jpg, .jpeg, .png, .svg"
+                onchange="processImg('thirdColumnImage', 64, 64)">
+            <input type="hidden" name="thirdColumnImage" value="<%= page.thirdColumnImage %>">
+        </div>
         <div class="form-group">
             <label for="thirdColumnTitle">Column 3 title</label>
             <input name="thirdColumnTitle" type="text" class="form-control form-control" value="<%= page.thirdColumnTitle %>">

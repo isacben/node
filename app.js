@@ -12,7 +12,7 @@ const app = express();
 
 // middelware
 app.use(express.static('public'));
-app.use(express.json());
+app.use(express.json({limit: '2mb'}));
 app.use(cookieParser());
 
 // register view engine
