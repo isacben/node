@@ -1,26 +1,29 @@
-[ ] hide top menu when you are in a landing page, exept in the abberto page
 [x] complete the content form
-[ ] be able to modify contact form
 [x] add html format for the description textarea
-[ ] handle content form errors
 [x] sticky Save button
+[x] complete the render of the landing pages
+[x] be able to select color for the buttons
+[x] be able to upload pictures
+[x] add navigation menu for in the dashboard for the form sections
+[ ] fix compression for column images
+[ ] hide top menu when you are in a landing page, exept in the abberto page
+[ ] redirect user to his landing page after logout
 [ ] add preview mechanism
 	[ ] style the preview page link
 	[ ] add a preview route and protected with the checkUser middleware
 	[ ] add a published field for the page collection
 	[ ] add a Publish button in the form with a Stripe subscription form
 	[ ] add a validation to the production page to see if it is published
-[x] complete the render of the landing pages
-[x] be able to select color for the buttons
-[ ] be able to upload pictures
+[ ] fix pageName: support long strings in mobile
+[ ] add env mechanism
 [ ] user management
 	[ ] see how to use google to authenticate
 		[ ] implement or close this issue
 	[ ] be able to reset password
 	[ ] confirm email mechanism
-[ ] add env mechanism
-[ ] fix pageName: support long strings in mobile
 
 - postponed -
 
+[ ] handle content form errors
 [ ] let users add links in the footer
+[ ] be able to modify contact form

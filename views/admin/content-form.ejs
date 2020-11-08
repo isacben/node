@@ -34,42 +34,11 @@
             <%- include('./form/columns.ejs'); %>
 
             <!-- References -->
-            <div class="card mb-3">
-                <div class="card-header bg-secondary text-white">
-                    References
-                </div>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="referenceLine1">First line of the comment</label>
-                        <input name="referenceLine1" type="text" class="form-control form-control" value="<%= page.referenceLine1 %>">
-                        <small id="referenceLine1Help" class="form-text text-muted">The first line of your reference's comment.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="referenceLine2">Second line of the comment</label>
-                        <input name="referenceLine2" type="text" class="form-control form-control" value="<%= page.referenceLine2 %>">
-                        <small id="referenceLine2Help" class="form-text text-muted">The second line of your reference's comment.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="referenceName">Name and title</label>
-                        <input name="referenceName" type="text" class="form-control form-control" value="<%= page.referenceName %>">
-                        <small id="referenceNameHelp" class="form-text text-muted">Name and title of your reference. For example, Isaac Benitez, lando founder.</small>
-                    </div>
-                </div>
-            </div>
+            <%- include('./form/references.ejs'); %>
 
             <!-- Footer section -->
-            <div class="card mb-3">
-                <div class="card-header bg-secondary text-white">
-                    Footer
-                </div>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="footerText">Text for the footer</label>
-                        <input name="footerText" type="text" class="form-control form-control" value="<%= page.footerText %>">
-                        <small id="footerTextHelp" class="form-text text-muted">Text for the footer. For example, &copy;2020 lando.com. All rigths reserved.</small>
-                    </div>
-                </div>
-            </div>
+            <%- include('./form/footer.ejs'); %>
+
         </div>
 
         <div class="col-md">
@@ -80,6 +49,24 @@
                             <p class="card-text">Save your work:</p>
                             <button class="btn btn-primary">Save</button>
                         </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p class="card-text">Navigate</p>
+                        <ul class="nav">
+                            <li class="nav-item"><a class="nav-link" href="#logo">Logo</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#page-link">Page link</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#button-color">Button color</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#header">Header</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#cover">Cover</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact-form">Contact form</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#columns">Columns</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#references">References</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#footer">Footer</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
