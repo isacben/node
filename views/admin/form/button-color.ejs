@@ -1,0 +1,28 @@
+<!-- Button color -->
+<div class="card mb-3">
+    <div class="card-header bg-secondary text-white">
+        Buttons Color
+    </div>
+    <div class="card-body">
+        <select name="buttonColor" class="selectpicker">
+            <% const dropdownVals = {
+                'btn-primary': 'Blue',
+                'btn-secondary': 'Gray',
+                'btn-success': 'Green',
+                'btn-danger': 'Red',
+                'btn-warning': 'Yellow',
+                'btn-info': 'Light Blue',
+                'btn-dark': 'Dark',
+            } %>
+            <% Object.entries(dropdownVals).forEach(function([key, value]) { %>
+                <option value="<%= key %>"
+                    <% if (page.buttonColor === key) { %>
+                        selected
+                    <% } %>
+                >
+                    <%= value %>
+                </option>
+            <% }) %>
+        </select>
+    </div>
+</div>

@@ -61,6 +61,9 @@ const pageSchema = new mongoose.Schema({
         type: String,
         maxlength: [60, 'Maximum lenght is 60 characters'],
     },
+    firstFeatureIcon: {
+        type: String,
+    },
     firstFeatureTitle: {
         type: String,
         maxlength: [60, 'Maximum lenght is 60 characters'],
@@ -68,6 +71,9 @@ const pageSchema = new mongoose.Schema({
     firstFeatureDescription: {
         type: String,
         maxlength: [150, 'Maximum lenght is 60 characters'],
+    },
+    secondFeatureIcon: {
+        type: String,
     },
     secondFeatureTitle: {
         type: String,
@@ -77,6 +83,9 @@ const pageSchema = new mongoose.Schema({
         type: String,
         maxlength: [150, 'Maximum lenght is 60 characters'],
     },
+    thirdFeatureIcon: {
+        type: String,
+    },
     thirdFeatureTitle: {
         type: String,
         maxlength: [60, 'Maximum lenght is 60 characters'],
@@ -84,6 +93,9 @@ const pageSchema = new mongoose.Schema({
     thirdFeatureDescription: {
         type: String,
         maxlength: [150, 'Maximum lenght is 60 characters'],
+    },
+    forthFeatureIcon: {
+        type: String,
     },
     forthFeatureTitle: {
         type: String,

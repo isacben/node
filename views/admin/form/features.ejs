@@ -1,0 +1,101 @@
+<!-- Features section -->
+<div class="card mb-3">
+    <div class="card-header bg-secondary text-white">
+        Features
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="featuresHeadline">Features section headline</label>
+            <input name="featuresHeadline" type="text" class="form-control form-control" value="<%= page.featuresHeadline %>">
+            <small id="featuresHeadlineHelp" class="form-text text-muted">A headline for the features section.</small>
+        </div>
+
+        <!-- Feature 1 -->
+        <div class="form-group">
+            <div class="mb-2">
+                <img class="border bg-light" id="firstFeatureIconPreview" src="<%= page.firstFeatureIcon %>" height="64">
+            </div>
+            <label for="firstFeatureIcon">Upload feature 1 icon</label>
+            <input type="file" class="form-control-file" 
+                id="firstFeatureIconUpload" accept=".jpg, .jpeg, .png, .svg"
+                onchange="processImg('firstFeatureIcon', 64, 64)">
+            <input type="hidden" name="firstFeatureIcon" value="<%= page.firstFeatureIcon %>">
+        </div>
+        <div class="form-group">
+            <label for="firstFeatureTitle">Feature 1 title</label>
+            <input name="firstFeatureTitle" type="text" class="form-control form-control" value="<%= page.firstFeatureTitle %>">
+            <small id="firstFeatureTitleHelp" class="form-text text-muted">Title for the first feature.</small>
+        </div>
+        <div class="form-group">
+            <label for="firstFeatureDescription">Feature 1 description</label>
+            <textarea name="firstFeatureDescription" class="form-control form-control"><%= page.firstFeatureDescription %></textarea>
+            <small id="firstFeatureDescriptionHelp" class="form-text text-muted">Information about the first feature.</small>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="form-group">
+            <div class="mb-2">
+                <img class="border bg-light" id="secondFeatureIconPreview" src="<%= page.secondFeatureIcon %>" height="64">
+            </div>
+            <label for="secondFeatureIcon">Upload feature 2 icon</label>
+            <input type="file" class="form-control-file" 
+                id="secondFeatureIconUpload" accept=".jpg, .jpeg, .png, .svg"
+                onchange="processImg('secondFeatureIcon', 36, 36)">
+            <input type="hidden" name="secondFeatureIcon" value="<%= page.secondFeatureIcon %>">
+        </div>
+        <div class="form-group">
+            <label for="secondFeatureTitle">Feature 2 title</label>
+            <input name="secondFeatureTitle" type="text" class="form-control form-control" value="<%= page.secondFeatureTitle %>">
+            <small id="secondFeatureTitleHelp" class="form-text text-muted">Title for the second feature.</small>
+        </div>
+        <div class="form-group">
+            <label for="secondFeatureDescription">Feature 2 description</label>
+            <textarea name="secondFeatureDescription" class="form-control form-control"><%= page.secondFeatureDescription %></textarea>
+            <small id="secondFeatureDescriptionHelp" class="form-text text-muted">Information about the second feature.</small>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="form-group">
+            <div class="mb-2">
+                <img class="border bg-light" id="thirdFeatureIconPreview" src="<%= page.thirdFeatureIcon %>" height="64">
+            </div>
+            <label for="thirdFeatureIcon">Upload feature 3 icon</label>
+            <input type="file" class="form-control-file" 
+                id="thirdFeatureIconUpload" accept=".jpg, .jpeg, .png, .svg"
+                onchange="processImg('thirdFeatureIcon', 64, 64)">
+            <input type="hidden" name="thirdFeatureIcon" value="<%= page.thirdFeatureIcon %>">
+        </div>
+        <div class="form-group">
+            <label for="thirdFeatureTitle">Feature 3 title</label>
+            <input name="thirdFeatureTitle" type="text" class="form-control form-control" value="<%= page.thirdFeatureTitle %>">
+            <small id="thirdFeatureTitleHelp" class="form-text text-muted">Title for the third feature.</small>
+        </div>
+        <div class="form-group">
+            <label for="thirdFeatureDescription">Feature 3 description</label>
+            <textarea name="thirdFeatureDescription" class="form-control form-control"><%= page.thirdFeatureDescription %></textarea>
+            <small id="thirdFeatureDescriptionHelp" class="form-text text-muted">Information about the third feature.</small>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="form-group">
+            <div class="mb-2">
+                <img class="border bg-light" id="forthFeatureIconPreview" src="<%= page.forthFeatureIcon %>" height="64">
+            </div>
+            <label for="forthFeatureIcon">Upload feature 4 icon</label>
+            <input type="file" class="form-control-file" 
+                id="forthFeatureIconUpload" accept=".jpg, .jpeg, .png, .svg"
+                onchange="processImg('forthFeatureIcon', 64, 64)">
+            <input type="hidden" name="forthFeatureIcon" value="<%= page.forthFeatureIcon %>">
+        </div>
+        <div class="form-group">
+            <label for="forthFeatureTitle">Feature 4 title</label>
+            <input name="forthFeatureTitle" type="text" class="form-control form-control" value="<%= page.forthFeatureTitle %>">
+            <small id="forthFeatureTitleHelp" class="form-text text-muted">Title for the forth feature.</small>
+        </div>
+        <div class="form-group">
+            <label for="forthFeatureDescription">Feature 4 description</label>
+            <textarea name="forthFeatureDescription" class="form-control form-control"><%= page.forthFeatureDescription %></textarea>
+            <small id="forthFeatureDescriptionHelp" class="form-text text-muted">Information about the forth feature.</small>
+        </div>
+    </div>
+</div>

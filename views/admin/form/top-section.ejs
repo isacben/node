@@ -1,0 +1,25 @@
+<!-- Top section -  -->
+<div class="card mb-3">
+    <div class="card-header bg-secondary text-white">
+        Cover
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="topHeadline">Main headline</label>
+            <input name="topHeadline" type="text" class="form-control form-control" value="<%= page.topHeadline %>">
+            <small id="topHeadlineHelp" class="form-text text-muted">A catchy headline for your landing page.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="secondaryHeadline">Secondary headline</label>
+            <input name="secondaryHeadline" type="text" class="form-control form-control" value="<%= page.secondaryHeadline %>">
+            <small id="secondaryHeadlineHelp" class="form-text text-muted">A subtitle with important information.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="mainDescription">Main description</label>
+            <textarea  id="textareaDescription" name="mainDescription" class="form-control form-control"><%= page.mainDescription %></textarea>
+            <small id="mainDescriptionHelp" class="form-text text-muted">The main information in your landing page.</small>
+        </div>
+    </div>
+</div>

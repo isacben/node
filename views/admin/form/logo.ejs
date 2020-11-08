@@ -1,0 +1,18 @@
+<!-- Page logo -->
+<div class="card mb-3">
+    <div class="card-header bg-secondary text-white">
+        Logo
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <div class="mb-2">
+                <img class="border bg-light" id="pageLogoPreview" src="<%= page.pageLogo %>" height="36">
+            </div>
+            <label for="pageLogo">Upload your logo</label>
+            <input type="file" class="form-control-file" 
+                id="pageLogoUpload" accept=".jpg, .jpeg, .png"
+                onchange="processImg('pageLogo', 36, 36)">
+            <input type="hidden" name="pageLogo" value="<%= page.pageLogo %>">
+        </div>
+    </div>
+</div>
