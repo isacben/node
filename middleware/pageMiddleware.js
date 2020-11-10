@@ -29,6 +29,10 @@ const getPage = async (req, res, next) => {
     const pageUrl = req.params.pageUrl;
     try {
         const page = await Page.findOne( { pageUrl } );
+        if (!page) {
+            res.status(400).send('404 page not found');
+        }
+
         res.locals.page = page;
         next();
     }

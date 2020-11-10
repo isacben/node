@@ -39,3 +39,7 @@ app.get('/dashboard', requireAuth, getPageInfo, (req, res) => {
 
 app.use(authRoutes);
 app.use(pageRoutes);
+
+app.use(function (req, res) {
+    res.status(400).send('404 page not found');
+});
